@@ -1,10 +1,10 @@
 <%= form_with(model: @postulation, local: true) do |form| %>
   <div class="container mt-5">
-    <% if @publication.errors.any? %>
+    <% if @postulation.errors.any? %>
       <div class="alert alert-danger">
-        <h2><%= pluralize(@publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+        <h2><%= pluralize(@postulation.errors.count, "error") %> prohibited this postulation from being saved:</h2>
         <ul>
-          <% @publication.errors.each do |error| %>
+          <% @postulation.errors.each do |error| %>
             <li><%= error.full_message %></li>
           <% end %>
         </ul>

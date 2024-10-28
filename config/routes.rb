@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  get "postulations/index"
-  get "postulations/show"
-  get "postulations/create"
+  # get "postulations/index"
+  # get "postulations/show"
+  # get "postulations/create"
   # get "publications/index"
-  # get "publications/show/:id"
+  # get "publications/show"
   # get "publications/update"
   # get "publications/create"
-  resources :postulations
+  # resources :postulations
   resources :publications
+  resources :postulations
   devise_for :users
   get "/index", to: "home#index"
   get "home/index"

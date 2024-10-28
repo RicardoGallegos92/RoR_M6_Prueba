@@ -1,7 +1,5 @@
 <%= render 'publication' %>
 
-<%= render 'postulations/form', postulation: @postulation %>
-
-<%= button_to "Postular", postulations_create_path, method: :get %>
+<%= button_to "Postular", postulations_path(), method: :post %>
 <hr>
 <%= button_to "Go back to Publications", publications_path, method: :get %>

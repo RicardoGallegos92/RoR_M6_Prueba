@@ -2,11 +2,14 @@ class PublicationsController < ApplicationController
   before_action :authorize_user
   before_action :authorize_admin, only: %i[ edit update create destroy ]
   #  before_action :authenticate_user!
-  before_action :set_publication, only: %i[ show edit ]
+  before_action :set_publication, only: %i[ show edit update destroy ]
   def index
     @publications = Publication.all.order(id: :desc)
   end
 
+  def new
+    @publication = Publication.new
+  end
   def show
     # before_action
   end
@@ -29,7 +32,7 @@ class PublicationsController < ApplicationController
 
   def create
     @publication = Publication.new(publication_params)
-    @publication.user = current_user
+    @publication.user_id = current_user.id
 
     respond_to do |format|
       if @publication.save

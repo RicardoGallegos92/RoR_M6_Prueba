@@ -1,5 +1,6 @@
 <!-- Ventana flotante -->
 <% if current_user.admin? %>
+  <%= button_to "New Publication", new_publication_path, method: :get %>
 <% else %>
   <%= render 'postulations/registro' %>
 <% end %>

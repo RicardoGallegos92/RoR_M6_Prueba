@@ -33,7 +33,7 @@ class PostulationsController < ApplicationController
   end
 
   def set_postulation
-    @postulation = Postulation.find(params[:id])
+    @postulation = Postulation.new
   end
 
   # si no está loggeado se va al Home_index

@@ -1,10 +1,10 @@
-<%= form_with(model: @publication, local: true) do |form| %>
+<%= form_with(model: publication, local: true) do |form| %>
   <div class="container mt-5">
-    <% if @publication.errors.any? %>
+    <% if publication.errors.any? %>
       <div class="alert alert-danger">
-        <h2><%= pluralize(@publication.errors.count, "error") %> prohibited this @publication from being saved:</h2>
+        <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
         <ul>
-          <% @publication.errors.each do |error| %>
+          <% publication.errors.each do |error| %>
             <li><%= error.full_message %></li>
           <% end %>
         </ul>
@@ -12,7 +12,6 @@
     <% end %>
 
     <div class="text-center">
-      <h1 class="">Editar Publicacion</h1>
 
       <div class="mb-3">
         <h1><%= form.label :title, style: "display: block" %></h1>
