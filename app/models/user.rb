@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :publications
   has_many :postulations
   has_one :user_detail
+  enum :role, [:normal, :admin]
 end

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "publication/index"
+  get "publication/show"
+  get "publication/update"
+  get "publication/create"
   devise_for :users
   get "/index", to: "home#index"
   get "home/index"
