@@ -9,6 +9,8 @@
 #   end
 require 'faker'
 
-User.create('esteban@admin.cl', '123789', 1)
-
-
+User.create!(email: 'esteban@admin.cl',
+            password: '123789',
+            password_confirmation: '123789',
+            role: 1
+            )

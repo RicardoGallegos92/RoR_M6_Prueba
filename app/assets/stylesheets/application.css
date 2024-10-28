@@ -22,3 +22,15 @@
     width: auto;
   }
  }
+
+ #navbar{
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.15);
+  border: 5px double black;
+  padding: .5vw;
+ }
+
+ .text-center{
+  text-align: center;
+ }

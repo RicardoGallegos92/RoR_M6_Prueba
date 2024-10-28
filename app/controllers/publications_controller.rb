@@ -14,8 +14,10 @@ class PublicationsController < ApplicationController
   end
 
   def authorize_admin
-    if current_user != nil
-      redirect_to root_path, alert: 'No tienes permiso para realizar esta acción' unless current_user.admin?
+    if current_user == nil
+      redirect_to root_path
+    else
+      redirect_to root_path, alert: "No tienes permiso para realizar esta acción" unless current_user.admin?
     end
   end
 end
