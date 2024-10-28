@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ #imgHome{
+  text-align: center;
+  margin: 40vh auto;
+  >img{
+    height: 15vh;
+    width: auto;
+  }
+ }

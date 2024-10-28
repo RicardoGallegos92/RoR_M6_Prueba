@@ -9,6 +9,6 @@
 #   end
 require 'faker'
 
-User.create('esteban@admin.cl', '123789')
+User.create('esteban@admin.cl', '123789', 1)
 
 

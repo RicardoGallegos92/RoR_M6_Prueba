@@ -1,0 +1,44 @@
+<nav class="navbar bg-body-secondary">
+  <div class="container-fluid">
+    <div></div>
+    <%= link_to "Pubs", root_path, class: 'navbar-brand text-success' %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <div class="d-flex mx-2 justify-content-end align-items-center">
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="fotoNavbar">
+                  <% if user_signed_in? %>
+                    <% if @photo != nil %>
+                      <%= image_tag current_user.photo %>
+                    <% end %>
+                  <% end %>
+                  <% if user_signed_in? %>
+                    Hola <%= current_user.name || current_user.email %>
+                  <% else %>
+                    Identificate
+                  <% end %>
+                </div>
+              </a>
+              <ul class="dropdown-menu">
+                <% if user_signed_in?%>
+                  <li><%= link_to 'Editar perfil', edit_user_registration_path, class: 'dropdown-item' %></li>
+                  <li><%= button_to 'Cerrar sesión', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
+                <% else %>
+                  <li>
+                    <%= link_to "Inicio Sesion", new_user_session_path, class: "dropdown-item text-danger" %>
+                  </li>
+                  <li>
+                    <%= link_to "Registro", new_user_registration_path, class: "dropdown-item text-danger" %>
+                  </li>
+                <% end%>
+              </ul>
+            </div>  <!-- nav-item dropdown -->
+      </div>
+    </div>
+  </div>  <!-- fin navbar > container-fluid -->
+</nav>
