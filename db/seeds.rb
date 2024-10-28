@@ -14,3 +14,16 @@ User.create!(email: 'esteban@admin.cl',
             password_confirmation: '123789',
             role: 1
             )
+
+User.create!(email: 'a@a.cl',
+            password: '123789',
+            password_confirmation: '123789'
+            )
+
+
+10.times do |i|
+  Publication.create!(user_id: 1,
+                    title: Faker::Lorem.sentence(word_count: 3),
+                    content: Faker::Lorem.sentence(word_count: 30)
+                    )
+end

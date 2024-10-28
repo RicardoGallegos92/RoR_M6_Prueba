@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ :root{
+  --BGD: white;
+  --BGD_BOX: rgba(255, 255, 255, 0.5);
+ }
 
  #imgHome{
   text-align: center;
@@ -34,3 +38,49 @@
  .text-center{
   text-align: center;
  }
+
+.center{
+  margin: 0 auto;
+}
+
+.tablero{
+  >*{
+    border: 5px solid black;
+    padding: 2.5vh 2vw;
+    margin-bottom: 2vh;
+  }
+  >div:nth-child(even){
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+h1{
+  font-weight: bold;
+}
+
+textarea{
+  width: 50%;
+  height: 10rem;
+}
+
+.button, button{
+  padding: .5rem .75rem;
+}
+
+.button_to{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.blok{
+  border: 5px double black;
+  margin: 3rem auto;
+  padding: 1rem 3rem;
+}
+
+#flotante{
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--BGD_BOX);
+}

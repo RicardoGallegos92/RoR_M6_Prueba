@@ -1,5 +1,6 @@
 class PublicationsController < ApplicationController
-  before_action :authorize_admin
+  before_action :authorize_user
+  before_action :authorize_admin, only: %i[ edit update create destroy ]
   #  before_action :authenticate_user!
   before_action :set_publication, only: %i[ show edit ]
   def index
@@ -52,7 +53,7 @@ class PublicationsController < ApplicationController
   private
 
   def publication_params
-    params.require(:publication).permit(:title, :content, :id_user)
+    params.require(:publication).permit(:title, :content, :user_id)
   end
 
   def set_publication
@@ -60,11 +61,13 @@ class PublicationsController < ApplicationController
   end
 
   # si no está loggeado se va al Home_index
-  def authorize_admin
+  def authorize_user
     if current_user == nil
       redirect_to root_path
-    else
-      redirect_to root_path, alert: "No tienes permiso para realizar esta acción" unless current_user.admin?
     end
+  end
+
+  def authorize_admin
+    redirect_to root_path, alert: "No tienes permiso para realizar esta acción" unless current_user.admin?
   end
 end
